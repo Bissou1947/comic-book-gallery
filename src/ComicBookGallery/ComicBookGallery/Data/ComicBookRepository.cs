@@ -8,7 +8,7 @@ namespace ComicBookGallery.Data
 {
     public class ComicBookRepository
     {
-        public ComicBook GetComicBook()
+        public ComicBook GetComicBook(int id)
         {
             var comicBook = new ComicBook
             {
