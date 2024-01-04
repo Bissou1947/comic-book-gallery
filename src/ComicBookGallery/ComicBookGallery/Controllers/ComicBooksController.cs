@@ -10,6 +10,7 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
+
         private ComicBookRepository _comicBookRepository;
         public ComicBooksController()
         {
@@ -18,7 +19,8 @@ namespace ComicBookGallery.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            return View(comicBooks);
         }
         public ActionResult Detail(int? id)
         {
