@@ -9,9 +9,10 @@
     @foreach (var comicBook in Model)
     {
     <div class="col-md-3">
-        <h4>@comicBook.displayText</h4>
+        <h4>@Html.ActionLink(comicBook.displayText, "Detail",
+                                  new {id = comicBook.id })</h4>
 
-        <a href="~/ComicBooks/Detail/@comicBook.id">
+        <a href="@Url.Action("Detail", new {id = comicBook.id})">
             <img src="/Images/@comicBook.coverImageFileName"
                  alt="@comicBook.displayText"
                  class="img-responsive" />
