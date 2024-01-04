@@ -27,6 +27,17 @@
         </div>
     </div>
 
+    @if (ViewBag.BackToComicBooksIndex != null && ViewBag.BackToComicBooksIndex)
+    {
+        <div class="backbar">
+            <div class="container">
+                @Html.ActionLink("return to list", "Index", "ComicBooks",
+               null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
